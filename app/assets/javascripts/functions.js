@@ -1,0 +1,1 @@
+(function(){var i,n;$(function(){return n(),i()}),n=function(){$(".box").click(function(){$(window).width()>768&&$(".copied").toggleClass("is-open")})},i=function(){$(".copied").click(function(){$(window).width()>768&&$(".copied").toggleClass("is-open")})}}).call(this);

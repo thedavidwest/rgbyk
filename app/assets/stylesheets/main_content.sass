@@ -1,0 +1,70 @@
+.main_content
+  margin-top: 100px
+  margin-left: auto
+  margin-right: auto
+  h1
+    font:
+      size: 1.4em
+      weight: 400
+    text-align: center
+    margin-bottom: 50px
+  .palette_wrapper
+    margin: 0 auto 50px auto
+    width: auto
+    h2
+      font-size: 1.4em
+      color: $black
+      text-align: center
+      position: relative
+    .box_wrapper
+      display: flex
+      justify-content: center
+      align-items: center
+      .palette_box
+        width: 200px
+        height: auto
+        margin: 0 10px
+        .box
+          height: 100px
+          width: 100%
+          cursor: pointer
+          transition: ease-in-out .2s
+          &:active
+            background-color: lighten($grey, 10%)
+        .a
+          background-color: #FAFAFA
+        .b
+          background-color: #1DE5D0
+        .c
+          background-color: #BE1F2D
+        .d
+          background-color: #2B2935
+        .e
+          background-color: #050505
+        .f
+          background-color: #E2481A
+        .g
+          background-color: #41B8E0
+        .h
+          background-color: #D0D6CA
+        h3
+          margin-top: 10px
+          text-align: center
+
+@media only screen and (max-width: 1250px)
+  .main_content
+    margin-top: 150px
+    width: 80vw
+    .palette_wrapper
+      h2
+        z-index: -1
+
+@media only screen and (max-width: 768px)
+  .main_content
+    margin-top: 175px
+    max-width: 80vw
+
+@media only screen and (max-width: 568px)
+  .main_content
+    margin-top: 150px
+    max-width: 80vw
