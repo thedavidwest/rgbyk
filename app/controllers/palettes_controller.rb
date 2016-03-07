@@ -1,6 +1,6 @@
 class PalettesController < ApplicationController
   before_action :set_palette, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /palettes
   # GET /palettes.json
   def index
@@ -14,7 +14,7 @@ class PalettesController < ApplicationController
 
   # GET /palettes/new
   def new
-    @palette = Palette.new
+    @palette = current_user.palettes.build
   end
 
   # GET /palettes/1/edit
@@ -24,7 +24,7 @@ class PalettesController < ApplicationController
   # POST /palettes
   # POST /palettes.json
   def create
-    @palette = Palette.new(palette_params)
+    @palette = current_user.palettes.build(palette_params)
 
     respond_to do |format|
       if @palette.save
@@ -67,6 +67,10 @@ class PalettesController < ApplicationController
       @palette = Palette.find(params[:id])
     end
 
+    def correct_user
+      @palette = current_user.palettes.find_by(id: params[:id])
+      redirect_to pins_path, notice: "Not Authorized to edit this pin" if @palette.nil?
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def palette_params
       params.require(:palette).permit(:title, :color, :color2, :color3, :color4)

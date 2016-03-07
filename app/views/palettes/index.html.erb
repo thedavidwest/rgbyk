@@ -4,11 +4,13 @@
     <div class="palette_wrapper">
       <div class="edit_palette">
         <h2><%= palette.title %></h2>
-        <%= link_to edit_palette_path(palette) do %>
-          <i class="fa fa-pencil-square-o"></i>
-        <% end %>
-        <%= link_to palette, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fa fa-trash-o"></i>
+        <% if palette.user == current_user %>
+          <%= link_to edit_palette_path(palette) do %>
+            <i class="fa fa-pencil-square-o"></i>
+          <% end %>
+          <%= link_to palette, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
         <% end %>
       </div>
       <div class="box_wrapper">
