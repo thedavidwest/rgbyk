@@ -7,9 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert")%>
+  <% end %>
 <%= yield %>
 
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('.alert').fadeOut("slow", function(){
+        $this.remove();
+      })
+    }, 250);
+  });
+</script>
 <script src="/app/assets/javascripts/jquery-2.1.4.min.js"></script>
 <script src="/app/assets/javascripts/functions.js"></script>
 <script src="/app/assets/javascripts/clipboard.min.js"></script>
