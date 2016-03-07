@@ -1,0 +1,37 @@
+<%= form_for(@palette) do |f| %>
+  <% if @palette.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@palette.errors.count, "error") %> prohibited this palette from being saved:</h2>
+
+      <ul>
+      <% @palette.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :color2 %><br>
+    <%= f.text_field :color2 %>
+  </div>
+  <div class="field">
+    <%= f.label :color3 %><br>
+    <%= f.text_field :color3 %>
+  </div>
+  <div class="field">
+    <%= f.label :color4 %><br>
+    <%= f.text_field :color4 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

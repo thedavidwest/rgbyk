@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307161546) do
+ActiveRecord::Schema.define(version: 20160307170823) do
+
+  create_table "palettes", force: :cascade do |t|
+    t.string   "title"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "color2"
+    t.string   "color3"
+    t.string   "color4"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

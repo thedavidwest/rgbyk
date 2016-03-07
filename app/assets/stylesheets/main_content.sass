@@ -11,11 +11,21 @@
   .palette_wrapper
     margin: 0 auto 50px auto
     width: auto
-    h2
-      font-size: 1.4em
-      color: $black
+    .edit_palette
       text-align: center
-      position: relative
+      margin-bottom: 17px
+      h2
+        font-size: 1.4em
+        color: $black
+        text-align: center
+        position: relative
+        margin-bottom: 0
+      a
+        color: $grey
+        transition: ease-in-out .2s
+        &:hover
+          color: darken($grey, 50%)
+
     .box_wrapper
       display: flex
       justify-content: center
@@ -31,25 +41,10 @@
           transition: ease-in-out .2s
           &:active
             background-color: lighten($grey, 10%)
-        .a
-          background-color: #FAFAFA
-        .b
-          background-color: #1DE5D0
-        .c
-          background-color: #BE1F2D
-        .d
-          background-color: #2B2935
-        .e
-          background-color: #050505
-        .f
-          background-color: #E2481A
-        .g
-          background-color: #41B8E0
-        .h
-          background-color: #D0D6CA
         h3
           margin-top: 10px
           text-align: center
+          text-transform: uppercase
 
 @media only screen and (max-width: 1250px)
   .main_content
