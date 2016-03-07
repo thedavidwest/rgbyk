@@ -7,10 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert")%>
   <% end %>
-<%= yield %>
+  <div class="page_wrap">
+    <div class="copied">
+      <p>COPIED!</p>
+    </div>
+    <%= render "layouts/sidebar" %>
+    <%= yield %>
+  </div>
 
 <script>
   $(document).ready(function(){

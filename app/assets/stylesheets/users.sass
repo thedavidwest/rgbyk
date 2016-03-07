@@ -1,0 +1,73 @@
+.user_centered
+  +outer-container(90%)
+  display: flex
+  align-items: center
+  justify-content: center
+  .user_wrap
+    width: 50vw
+    form
+      .field
+        position: relative
+        margin-bottom: 25px
+        input
+          box-shadow: none
+          display: inline-block
+          border-radius: 0px
+          border: none
+          border-bottom: 1px solid $grey
+          margin-bottom: 0px
+          padding-left: 0px
+          text-transform: uppercase
+        input:-webkit-autofill
+          background-color: $white
+        label
+          color: $grey
+          text-transform: uppercase
+          &:focus
+            color: $black
+      .remember
+        text-align: right
+        padding: 0
+        margin-bottom: 10px
+        label
+          margin-bottom: 0
+          display: inline-block
+          font:
+            family: $round
+            size: .8em
+      .actions
+        text-align: right
+        input
+          background-color: $grey
+          font-family: $square
+          text-transform: uppercase
+          border-radius: 0px
+          transition: ease-in-out .2s
+          &:hover
+            background-color: $black
+
+    .shared
+      text-align: center
+      margin-top: 25px
+      a
+        display: inline
+        padding: 0 20px
+        border-right: 2px solid $grey
+        color: $grey
+        &:hover
+          color: darken($grey, 50%)
+        &:last-child
+          border-right: none
+    .back
+      text-align: right
+      margin-top: 15px
+      a
+        background-color: $grey
+        font-family: $square
+        text-transform: uppercase
+        border-radius: 0px
+        padding: 10px 20px
+        color: white
+        transition: ease-in-out .2s
+        &:hover
+          background-color: $black

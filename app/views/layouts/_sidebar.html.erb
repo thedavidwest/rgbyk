@@ -1,0 +1,21 @@
+<div class="sidebar">
+  <div class="sidebar_position">
+    <div class="logo">
+      <h1>RGBYK</h1>
+      <h4>color palettes</h4>
+    </div>
+    <div class="instruction">
+      <h4>select a color to copy its hex value</h4>
+    <% if user_signed_in? %>
+      <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "New Palette", new_palette_path %></li>
+    <% else %>
+      <li><%= link_to "Log In", new_user_session_path %></li>
+    <% end %>
+    </div>
+    <div class="foot">
+      <h5>created by</h5>
+      <h6> <a href="#">Buy &middot; Woodrow &middot; Sell</a></h6>
+    </div>
+  </div>
+</div>

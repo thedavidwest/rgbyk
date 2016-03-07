@@ -1,7 +1,7 @@
 $ ->
   openCopy()
   closeCopy()
-
+  
 openCopy = ->
   $('.box').click ->
     if $(window).width() > 768

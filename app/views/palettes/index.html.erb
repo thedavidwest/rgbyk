@@ -1,60 +1,34 @@
-<div class="page_wrap">
-  <div class="copied">
-    <p>COPIED!</p>
-  </div>
-  <div class="sidebar">
-    <div class="sidebar_position">
-      <div class="logo">
-        <h1>RGBYK</h1>
-        <h4>color palettes</h4>
+<div class="main_content">
+  <h1>Latest Palettes</h1>
+  <% @palettes.reverse_each do |palette| %>
+    <div class="palette_wrapper">
+      <div class="edit_palette">
+        <h2><%= palette.title %></h2>
+        <%= link_to edit_palette_path(palette) do %>
+          <i class="fa fa-pencil-square-o"></i>
+        <% end %>
+        <%= link_to palette, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-trash-o"></i>
+        <% end %>
       </div>
-      <div class="instruction">
-        <h4>select a color to copy its hex value</h4>
-      </div>
-      <% if user_signed_in? %>
-        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to "New Palette", new_palette_path %></li>
-      <% else %>
-        <li><%= link_to "Log In", new_user_session_path %></li>
-      <% end %>
-      <div class="foot">
-        <h5>created by</h5>
-        <h6> <a href="#">Buy &middot; Woodrow &middot; Sell</a></h6>
+      <div class="box_wrapper">
+        <div class="palette_box">
+          <div data-clipboard-text="<%= palette.color %>" class="box" style="background-color: <%= palette.color %>"></div>
+          <h3><%= palette.color %></h3>
+        </div>
+        <div class="palette_box">
+          <div data-clipboard-text="<%= palette.color2 %>" class="box" style="background-color: <%= palette.color2 %>"></div>
+          <h3><%= palette.color2 %></h3>
+        </div>
+        <div class="palette_box">
+          <div data-clipboard-text="<%= palette.color3 %>" class="box" style="background-color: <%= palette.color3 %>"></div>
+          <h3><%= palette.color3 %></h3>
+        </div>
+        <div class="palette_box">
+          <div data-clipboard-text="<%= palette.color4 %>" class="box" style="background-color: <%= palette.color4 %>"></div>
+          <h3><%= palette.color4 %></h3>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="main_content">
-    <h1>Latest Palettes</h1>
-    <% @palettes.reverse_each do |palette| %>
-      <div class="palette_wrapper">
-        <div class="edit_palette">
-          <h2><%= palette.title %></h2>
-          <%= link_to edit_palette_path(palette) do %>
-            <i class="fa fa-pencil-square-o"></i>
-          <% end %>
-          <%= link_to palette, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa fa-trash-o"></i>
-          <% end %>
-        </div>
-        <div class="box_wrapper">
-          <div class="palette_box">
-            <div data-clipboard-text="<%= palette.color %>" class="box" style="background-color: <%= palette.color %>"></div>
-            <h3><%= palette.color %></h3>
-          </div>
-          <div class="palette_box">
-            <div data-clipboard-text="<%= palette.color2 %>" class="box" style="background-color: <%= palette.color2 %>"></div>
-            <h3><%= palette.color2 %></h3>
-          </div>
-          <div class="palette_box">
-            <div data-clipboard-text="<%= palette.color3 %>" class="box" style="background-color: <%= palette.color3 %>"></div>
-            <h3><%= palette.color3 %></h3>
-          </div>
-          <div class="palette_box">
-            <div data-clipboard-text="<%= palette.color4 %>" class="box" style="background-color: <%= palette.color4 %>"></div>
-            <h3><%= palette.color4 %></h3>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
