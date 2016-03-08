@@ -1,5 +1,6 @@
 .page_wrap .sidebar
   width: 300px
+  z-index: 20
   .sidebar_position
     position: fixed
     top: 20px
@@ -19,17 +20,18 @@
       h4
         font-size: .8em
         width: 200px
-    li
-      list-style: none
-      text-transform: lowercase
-      font:
-        family: $square
-        size: .8em
-      a
-        color: $grey
-        transition: ease-in-out .2
-        &:hover
-          color: darken($grey, 50%)
+    .user_btns
+      li
+        list-style: none
+        text-transform: lowercase
+        font:
+          family: $square
+          size: .8em
+        a
+          color: $grey
+          transition: ease-in-out .2
+          &:hover
+            color: darken($grey, 50%)
     .foot
       h5
         font-size: .6em
@@ -61,6 +63,13 @@
       .instruction
         h4
           text-align: center
+      .user_btns
+        li
+          display: inline
+          border-right: 2px solid $grey
+          padding: 0 10px
+          &:last-child
+            border: none
       .foot
         h5
           text-align: right
@@ -75,6 +84,10 @@
         text-align: center
       .instruction
         display: none
+      .user_btns
+        display: none
+        li
+
       .foot
         display: block
         h5

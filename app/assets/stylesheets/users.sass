@@ -5,6 +5,8 @@
   justify-content: center
   .user_wrap
     width: 50vw
+    h1
+      color: $black
     form
       .field
         position: relative
@@ -71,3 +73,19 @@
         transition: ease-in-out .2s
         &:hover
           background-color: $black
+
+@media only screen and (max-width: 1250px)
+  .user_wrap
+    margin-top: 125px
+
+@media only screen and (max-width: 768px)
+  .user_wrap
+    margin-top: 150px
+    form
+      .actions
+        text-align: center
+    .back
+      text-align: center
+@media only screen and (max-width: 568px)
+  .user_wrap
+    margin-top: 125px
