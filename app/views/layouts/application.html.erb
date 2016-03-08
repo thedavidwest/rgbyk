@@ -22,12 +22,12 @@
   $(document).ready(function(){
     setTimeout(function(){
       $('.alert').fadeOut("slow", function(){
-        $this.remove();
+        $('alert').remove();
       })
     }, 250);
     setTimeout(function(){
-      $('.copied').fadeOut("slow", function(){
-        $this.remove();
+      $('.is-open').fadeOut("slow", function(){
+        $('.is-open').remove();
       })
     }, 250);
   });
