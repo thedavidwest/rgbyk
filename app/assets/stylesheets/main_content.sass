@@ -2,6 +2,29 @@
   margin-top: 100px
   margin-left: auto
   margin-right: auto
+  .pagination
+    margin-bottom: 25px
+    text-align: center
+    span
+      display: none
+    //.next_page
+      background-color: $white
+      &:hover
+        background-color: $white
+    //.disabled
+      +hide-text
+      display: block
+    a
+      color: $white
+    .previous_page, .next_page
+      background-color: $grey
+      font-family: $square
+      text-transform: uppercase
+      border-radius: 0px
+      padding: 10px 20px
+      transition: ease-in-out .2s
+      &:hover
+        background-color: $black
   h1
     font:
       size: 1.4em

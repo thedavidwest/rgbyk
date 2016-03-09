@@ -4,7 +4,7 @@ class PalettesController < ApplicationController
   # GET /palettes
   # GET /palettes.json
   def index
-    @palettes = Palette.all
+    @palettes = Palette.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /palettes/1

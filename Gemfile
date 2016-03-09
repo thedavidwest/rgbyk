@@ -20,6 +20,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 gem 'font-awesome-sass', '~> 4.5'
 gem 'unicorn', '~> 5.0', '>= 5.0.1'
 gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'will_paginate', '~> 3.1'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.3', '>= 1.3.9'
