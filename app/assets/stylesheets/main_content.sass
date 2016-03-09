@@ -7,13 +7,6 @@
     text-align: center
     span
       display: none
-    //.next_page
-      background-color: $white
-      &:hover
-        background-color: $white
-    //.disabled
-      +hide-text
-      display: block
     a
       color: $white
     .previous_page, .next_page
@@ -62,7 +55,6 @@
           width: 100%
           cursor: pointer
           transition: ease-in-out .2s
-          background-color: red
           &:active
             background-color: lighten($grey, 10%)
         h3
